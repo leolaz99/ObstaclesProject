@@ -1,0 +1,93 @@
+namespace Game
+{
+    public struct Position
+    {
+        public int x;
+        public int y;
+    }
+
+    public enum effect { isSlowed, isStunned, isBlinded };
+
+    public interface IObstacle    
+    {
+        string Action();            //descrive l'azione dell'ostacolo
+    }
+
+    class Obstacle
+    {
+        public float damage;        //descrive il danno dell'ostacolo al giocatore
+        public effect;              //descrive il debuff del giocatore per colpa dell'ostacolo
+        public Position position;
+    }
+
+    
+    class Bomb : Obstacle, IObstacle
+    {
+        public Bomb()
+        {
+            damage = 70f;
+            effect.isSlowed;
+        }
+
+        public string Action()
+        {
+            return "Explode";
+        }
+    }
+
+    class Smoke : Obstacle, IObstacle
+    {
+        public Smoke()
+        {
+            damage = 0f;
+            effect.isBlinded;
+        }
+
+        public string Action()
+        {
+            return "Make fog";
+        }
+    }
+
+    class Wind : Obstacle, IObstacle
+    {
+        public Wind()
+        {
+            damage = 0f;
+            effect.isSlowed;
+        }
+
+        public string Action()
+        {
+            return "Make air";
+        }
+    }
+
+    class Trapdoor : Obstacle, IObstacle
+    {
+        public Trapdoor()
+        {
+            damage = 10f;
+            effect.isStunned;
+        }
+
+        public string Action()
+        {
+            return "Open door";
+        }
+    }
+
+    class BearTrap : Obstacle, IObstacle
+    {
+        public BearTrap()
+        {
+            damage = 50f;
+            effect.isStunned;
+        }
+
+        public string Action()
+        {
+            return "Close trap";
+        }
+    }
+}

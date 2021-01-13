@@ -1,3 +1,5 @@
+using System;
+
 namespace Game
 {
     public struct Position
@@ -27,7 +29,7 @@ namespace Game
         public Bomb()
         {
             damage = 70f;
-            effect = Effect.isSlowed;
+            effect=Effect.isSlowed;
         }
 
         public string Action()
@@ -41,7 +43,7 @@ namespace Game
         public Smoke()
         {
             damage = 0f;
-            effect = Effect.isBlinded;
+            effect=Effect.isBlinded;
         }
 
         public string Action()
@@ -55,7 +57,7 @@ namespace Game
         public Wind()
         {
             damage = 0f;
-            effect = Effect.isSlowed;
+            effect=Effect.isSlowed;
         }
 
         public string Action()
@@ -69,7 +71,7 @@ namespace Game
         public Trapdoor()
         {
             damage = 10f;
-            effect = Effect.isStunned;
+            effect=Effect.isStunned;
         }
 
         public string Action()
@@ -83,7 +85,7 @@ namespace Game
         public BearTrap()
         {
             damage = 50f;
-            effect = Effect.isStunned;
+            effect=Effect.isStunned;
         }
 
         public string Action()
@@ -91,4 +93,11 @@ namespace Game
             return "Close trap";
         }
     }
+}
+
+public class MainClass
+{
+	public static void Main()
+	{
+	}
 }
